@@ -1,0 +1,1972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EthicsCorp India - Governance Crisis Challenge</title>
+    <style>
+        /* ================================
+           EthicsCorp India - CSS Stylesheet
+           ================================ */
+
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Screen Management */
+        .screen {
+            display: none;
+        }
+
+        .screen.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ================================
+           WELCOME SCREEN STYLES
+           ================================ */
+
+        .company-header {
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            padding: 30px;
+            border-radius: 15px 15px 0 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: -10px;
+        }
+
+        .company-logo h1 {
+            color: #fff;
+            font-size: 3em;
+            text-align: center;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .crisis-badge {
+            background: #e74c3c;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 15px;
+            border-radius: 10px;
+            animation: pulse 2s infinite;
+            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.03);
+            }
+        }
+
+        .briefing-card {
+            background: white;
+            padding: 40px;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            margin-bottom: 30px;
+        }
+
+        .briefing-card h2 {
+            color: #2c3e50;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+        }
+
+        .briefing-card h3 {
+            color: #2c3e50;
+            font-size: 1.5em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .briefing-card h4 {
+            color: #34495e;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .company-profile, .crisis-section, .mission-section {
+            margin-bottom: 30px;
+        }
+
+        .company-profile p {
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .expertise-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .crisis-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .crisis-item {
+            background: #fff5f5;
+            border-left: 4px solid #e74c3c;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .mission-section p {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            border-radius: 5px;
+            line-height: 1.8;
+            font-size: 1.05em;
+        }
+
+        .rounds-preview {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 30px 0;
+        }
+
+        .round-badge {
+            background: white;
+            border: 3px solid #3498db;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            min-width: 150px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .round-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .round-number {
+            display: block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 10px;
+            line-height: 30px;
+        }
+
+        .round-name {
+            display: block;
+            color: #2c3e50;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .game-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .stat-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #27ae60;
+        }
+
+        .player-input-section {
+            background: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+
+        .player-input-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .player-input-section label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: #34495e;
+        }
+
+        .player-input-section input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1.1em;
+            transition: border-color 0.3s ease;
+        }
+
+        .player-input-section input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .input-note {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* Buttons */
+        .btn-primary, .btn-secondary {
+            padding: 15px 40px;
+            font-size: 1.2em;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(39, 174, 96, 0.6);
+        }
+
+        .btn-secondary {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-secondary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+        }
+
+        /* ================================
+           GAME SCREEN STYLES
+           ================================ */
+
+        .game-header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .header-left, .header-center, .header-right {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .player-info, .timer, .score-display {
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .player-info .label {
+            color: #7f8c8d;
+            margin-right: 5px;
+        }
+
+        .timer {
+            text-align: center;
+            color: #27ae60;
+            font-size: 1.5em;
+        }
+
+        .timer.warning {
+            color: #e74c3c;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0.5; }
+        }
+
+        .score-display {
+            text-align: right;
+            color: #3498db;
+        }
+
+        .progress-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .round-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .round-label {
+            color: #2c3e50;
+            font-size: 1.1em;
+        }
+
+        .round-name-display {
+            color: #3498db;
+            font-size: 1.1em;
+        }
+
+        .question-indicator {
+            color: #7f8c8d;
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .round-progress {
+            font-size: 0.9em;
+            color: #95a5a6;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 25px;
+            background: #ecf0f1;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #27ae60 0%, #229954 100%);
+            transition: width 0.5s ease;
+            border-radius: 15px;
+        }
+
+        .question-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .question-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .question-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+        }
+
+        .hint-btn {
+            background: #f39c12;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .hint-btn:hover:not(:disabled) {
+            background: #e67e22;
+            transform: translateY(-2px);
+        }
+
+        .hint-btn:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        .question-text {
+            font-size: 1.15em;
+            line-height: 1.8;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+
+        .hint-box {
+            background: #fff3cd;
+            border: 2px solid #f39c12;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .hint-header {
+            font-weight: 700;
+            color: #e67e22;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .hint-text {
+            color: #856404;
+            line-height: 1.6;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .option {
+            background: #f8f9fa;
+            border: 2px solid #ddd;
+            padding: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .option:hover {
+            background: #e8f4f8;
+            border-color: #3498db;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            background: #e8f4f8;
+            border-color: #3498db;
+            border-width: 3px;
+        }
+
+        .option.correct {
+            background: #d4edda;
+            border-color: #28a745;
+            border-width: 3px;
+        }
+
+        .option.incorrect {
+            background: #f8d7da;
+            border-color: #dc3545;
+            border-width: 3px;
+        }
+
+        .option input[type="radio"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .option label {
+            cursor: pointer;
+            flex: 1;
+            font-size: 1.05em;
+            line-height: 1.6;
+        }
+
+        .feedback {
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .feedback-correct {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+
+        .feedback-incorrect {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+        }
+
+        .feedback-icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        .feedback-text {
+            font-size: 1.2em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .feedback-correct .feedback-text {
+            color: #155724;
+        }
+
+        .feedback-incorrect .feedback-text {
+            color: #721c24;
+        }
+
+        .explanation {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 15px;
+            line-height: 1.8;
+            color: #2c3e50;
+            border-left: 4px solid #3498db;
+        }
+
+        .action-buttons {
+            text-align: center;
+        }
+
+        /* ================================
+           RESULTS SCREEN STYLES
+           ================================ */
+
+        .results-card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .results-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+        }
+
+        .results-card h2 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+        }
+
+        .final-score {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .score-circle {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .score-big {
+            font-size: 4em;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .score-total {
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        .percentage {
+            font-size: 3em;
+            font-weight: 800;
+            color: #27ae60;
+        }
+
+        .results-message {
+            font-size: 1.2em;
+            line-height: 1.8;
+            color: #555;
+            margin: 25px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+
+        .time-taken {
+            font-size: 1.1em;
+            color: #7f8c8d;
+            margin: 20px 0;
+        }
+
+        .round-breakdown {
+            margin: 30px 0;
+            text-align: left;
+        }
+
+        .round-breakdown h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .round-score {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            border-left: 4px solid #3498db;
+        }
+
+        .round-name {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .round-result {
+            font-weight: 700;
+            color: #27ae60;
+        }
+
+        /* Result level colors */
+        .results-card.level-hero {
+            border-top: 8px solid #ffd700;
+        }
+
+        .results-card.level-hero .results-icon {
+            color: #ffd700;
+        }
+
+        .results-card.level-expert {
+            border-top: 8px solid #3498db;
+        }
+
+        .results-card.level-expert .results-icon {
+            color: #3498db;
+        }
+
+        .results-card.level-officer {
+            border-top: 8px solid #27ae60;
+        }
+
+        .results-card.level-officer .results-icon {
+            color: #27ae60;
+        }
+
+        .results-card.level-fail {
+            border-top: 8px solid #e74c3c;
+        }
+
+        .results-card.level-fail .results-icon {
+            color: #e74c3c;
+        }
+
+        .action-buttons-results {
+            margin-top: 30px;
+        }
+
+        /* ================================
+           MODAL STYLES
+           ================================ */
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: white;
+            margin: 50px auto;
+            padding: 40px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 900px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 35px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 20px;
+        }
+
+        .close:hover {
+            color: #000;
+        }
+
+        .modal-content h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        .instructions-section {
+            margin: 25px 0;
+        }
+
+        .instructions-section h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .instructions-section ul, .instructions-section ol {
+            margin-left: 25px;
+            line-height: 2;
+        }
+
+        .instructions-section li {
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .structure-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .structure-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            text-align: center;
+        }
+
+        .structure-item strong {
+            color: #2c3e50;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .structure-item small {
+            color: #7f8c8d;
+            font-size: 0.85em;
+        }
+
+        .structure-summary {
+            text-align: center;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 15px;
+        }
+
+        .crisis-levels {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .level-item {
+            padding: 15px;
+            border-radius: 8px;
+            font-weight: 600;
+            border-left: 5px solid;
+        }
+
+        .level-hero {
+            background: #fff9e6;
+            border-color: #ffd700;
+            color: #856404;
+        }
+
+        .level-expert {
+            background: #e8f4f8;
+            border-color: #3498db;
+            color: #2c3e50;
+        }
+
+        .level-officer {
+            background: #d4edda;
+            border-color: #27ae60;
+            color: #155724;
+        }
+
+        .level-fail {
+            background: #f8d7da;
+            border-color: #e74c3c;
+            color: #721c24;
+        }
+
+        /* ================================
+           FOOTER
+           ================================ */
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: white;
+            margin-top: 30px;
+        }
+
+        footer a {
+            color: #f1c40f;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* ================================
+           RESPONSIVE DESIGN
+           ================================ */
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            
+            .company-logo h1 {
+                font-size: 2em;
+            }
+            
+            .crisis-badge {
+                font-size: 1.2em;
+            }
+            
+            .briefing-card {
+                padding: 20px;
+            }
+            
+            .briefing-card h2 {
+                font-size: 1.5em;
+            }
+            
+            .game-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .header-left, .header-center, .header-right {
+                text-align: center;
+            }
+            
+            .score-display {
+                text-align: center;
+            }
+            
+            .rounds-preview {
+                flex-direction: column;
+            }
+            
+            .round-badge {
+                width: 100%;
+            }
+            
+            .question-header {
+                flex-direction: column;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                margin: 5px 0;
+            }
+            
+            .final-score {
+                flex-direction: column;
+            }
+            
+            .modal-content {
+                width: 95%;
+                padding: 20px;
+                margin: 20px auto;
+            }
+            
+            .structure-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .crisis-points {
+                grid-template-columns: 1fr;
+            }
+            
+            .game-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Welcome Screen -->
+    <div id="welcomeScreen" class="screen active">
+        <div class="company-header">
+            <div class="company-logo">
+                <h1>EthicsCorp India</h1>
+            </div>
+            <div class="crisis-badge">⚠️ GOVERNANCE CRISIS ALERT ⚠️</div>
+        </div>
+
+        <div class="container">
+            <div class="briefing-card">
+                <h2>🚨 Business Ethics & Corporate Governance Crisis Challenge 🚨</h2>
+                
+                <div class="company-profile">
+                    <h3>📋 Emergency Briefing</h3>
+                    <h4>Company Profile</h4>
+                    <p><strong>EthicsCorp India</strong> is a leading Indian pharmaceutical company with 20 years of excellence, employing 8,000+ professionals. We specialize in generic medicines, biosimilars, and API manufacturing with operations across 45 countries.</p>
+                    
+                    <div class="expertise-grid">
+                        <div class="expertise-item">💊 Generic Drug Manufacturing</div>
+                        <div class="expertise-item">🧬 Biosimilar Development</div>
+                        <div class="expertise-item">🏭 API Production & Export</div>
+                        <div class="expertise-item">🌍 Global Distribution Network</div>
+                    </div>
+                </div>
+
+                <div class="crisis-section">
+                    <h4>🔴 Current Crisis Situation</h4>
+                    <div class="crisis-points">
+                        <div class="crisis-item">💰 <strong>₹1,000 Crore</strong> investor funds at risk</div>
+                        <div class="crisis-item">🚨 Whistleblower allegations of financial irregularities</div>
+                        <div class="crisis-item">⚖️ Board independence questioned by institutional investors</div>
+                        <div class="crisis-item">🌐 Cross-border bribery investigation by authorities</div>
+                        <div class="crisis-item">📊 CSR fund misuse allegations surfaced</div>
+                        <div class="crisis-item">👥 Independent directors threatening mass resignation</div>
+                        <div class="crisis-item">📉 Stock price crashed 35% in 2 weeks</div>
+                        <div class="crisis-item">🏛️ SEBI investigation initiated</div>
+                    </div>
+                </div>
+
+                <div class="mission-section">
+                    <h4>🎯 Your Mission</h4>
+                    <p>As the newly appointed <strong>Chief Ethics & Governance Officer</strong>, you must demonstrate mastery across all ethics and governance domains to restore stakeholder confidence and save EthicsCorp India from collapse!</p>
+                </div>
+
+                <div class="rounds-preview">
+                    <div class="round-badge">
+                        <span class="round-number">R1</span>
+                        <span class="round-name">Ethics Foundation</span>
+                    </div>
+                    <div class="round-badge">
+                        <span class="round-number">R2</span>
+                        <span class="round-name">Ethical Dilemmas</span>
+                    </div>
+                    <div class="round-badge">
+                        <span class="round-number">R3</span>
+                        <span class="round-name">Governance Framework</span>
+                    </div>
+                    <div class="round-badge">
+                        <span class="round-number">R4</span>
+                        <span class="round-name">Governance Challenges</span>
+                    </div>
+                    <div class="round-badge">
+                        <span class="round-number">R5</span>
+                        <span class="round-name">Global Ethics</span>
+                    </div>
+                </div>
+
+                <div class="game-stats">
+                    <div class="stat-item">⏰ <strong>Time Limit:</strong> 30 Minutes</div>
+                    <div class="stat-item">📝 <strong>Total Questions:</strong> 15 (3 per round)</div>
+                    <div class="stat-item">🎯 <strong>Passing Score:</strong> 10/15 (67%)</div>
+                    <div class="stat-item">💡 <strong>Hint System:</strong> 1 hint per round</div>
+                </div>
+            </div>
+
+            <div class="player-input-section">
+                <h3>📝 Player Information</h3>
+                <label for="playerName">Enter Your Name:</label>
+                <input type="text" id="playerName" placeholder="Your name will appear on the certificate">
+                <p class="input-note">This will appear on your completion certificate</p>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="btn-primary" onclick="startGame()">🚀 Begin Crisis Resolution</button>
+                <button class="btn-secondary" onclick="showInstructions()">📖 View Instructions</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="gameScreen" class="screen">
+        <div class="game-header">
+            <div class="header-left">
+                <div class="player-info">
+                    <span class="label">Player:</span>
+                    <span id="playerNameDisplay"></span>
+                </div>
+            </div>
+            <div class="header-center">
+                <div class="timer" id="timer">⏰ Time Left: 30:00</div>
+            </div>
+            <div class="header-right">
+                <div class="score-display">
+                    <span id="currentScore">0</span>/<span id="totalQuestions">15</span> 🎯
+                </div>
+            </div>
+        </div>
+
+        <div class="progress-section">
+            <div class="round-indicator">
+                <span class="round-label">Round <span id="currentRound">1</span>/5</span>
+                <span class="round-name-display" id="roundNameDisplay">Ethics Foundation</span>
+            </div>
+            <div class="question-indicator">
+                Question <span id="currentQuestion">1</span>/15
+                <span class="round-progress">(Round Q<span id="roundQuestion">1</span>/3)</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="question-card">
+                <div class="question-header">
+                    <span class="question-tag" id="questionTag">SCENARIO</span>
+                    <button class="hint-btn" id="hintBtn" onclick="showHint()">💡 Use Hint (<span id="hintCount">1</span> left this round)</button>
+                </div>
+                <div class="question-text" id="questionText"></div>
+                <div class="hint-box" id="hintBox" style="display: none;">
+                    <div class="hint-header">💡 Hint:</div>
+                    <div class="hint-text" id="hintText"></div>
+                </div>
+                <div class="options" id="optionsContainer"></div>
+                <div class="feedback" id="feedbackBox" style="display: none;">
+                    <div class="feedback-icon" id="feedbackIcon"></div>
+                    <div class="feedback-text" id="feedbackText"></div>
+                    <div class="explanation" id="explanationText"></div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn-primary" id="submitBtn" onclick="submitAnswer()">✅ Submit Answer</button>
+                <button class="btn-secondary" id="nextBtn" onclick="nextQuestion()" style="display: none;">➡️ Next Question</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="resultsScreen" class="screen">
+        <div class="container">
+            <div class="results-card">
+                <div class="results-icon" id="resultsIcon"></div>
+                <h2 id="resultsTitle"></h2>
+                <div class="final-score">
+                    <div class="score-circle">
+                        <span class="score-big" id="finalScore">0</span>
+                        <span class="score-total">/15</span>
+                    </div>
+                    <div class="percentage" id="percentageScore">0%</div>
+                </div>
+                <div class="results-message" id="resultsMessage"></div>
+                <div class="time-taken">
+                    ⏱️ Time Taken: <span id="timeTaken"></span>
+                </div>
+                
+                <div class="round-breakdown">
+                    <h3>📊 Performance Breakdown</h3>
+                    <div id="roundBreakdown"></div>
+                </div>
+
+                <div class="action-buttons-results">
+                    <button class="btn-primary" onclick="generateCertificate()">🏆 Download Certificate</button>
+                    <button class="btn-secondary" onclick="restartGame()">🔄 Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Instructions Modal -->
+    <div id="instructionsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeInstructions()">&times;</span>
+            <h2>📖 Challenge Instructions</h2>
+            
+            <div class="instructions-section">
+                <h3>🎯 Mission Objective</h3>
+                <p>Save EthicsCorp India by demonstrating mastery of business ethics and corporate governance across 5 critical domains. Your expertise will determine the company's fate and ₹1,000 crore in investor funds!</p>
+            </div>
+
+            <div class="instructions-section">
+                <h3>🗝️ Game Structure</h3>
+                <div class="structure-grid">
+                    <div class="structure-item">
+                        <strong>R1:</strong> Ethics Foundation<br>
+                        <small>Decision frameworks & Indian context</small>
+                    </div>
+                    <div class="structure-item">
+                        <strong>R2:</strong> Ethical Dilemmas<br>
+                        <small>Moral philosophies & whistleblowing</small>
+                    </div>
+                    <div class="structure-item">
+                        <strong>R3:</strong> Governance Framework<br>
+                        <small>Companies Act & SEBI guidelines</small>
+                    </div>
+                    <div class="structure-item">
+                        <strong>R4:</strong> Governance Challenges<br>
+                        <small>Board independence & accountability</small>
+                    </div>
+                    <div class="structure-item">
+                        <strong>R5:</strong> Global Ethics<br>
+                        <small>Cross-border compliance & OECD</small>
+                    </div>
+                </div>
+                <p class="structure-summary"><strong>Total:</strong> 5 Rounds × 3 Questions = 15 Strategic Challenges</p>
+            </div>
+
+            <div class="instructions-section">
+                <h3>⏱️ Time Management</h3>
+                <ul>
+                    <li>⏰ <strong>Total Time:</strong> 30 minutes</li>
+                    <li>📝 <strong>Per Round:</strong> ~6 minutes</li>
+                    <li>❓ <strong>Per Question:</strong> ~2 minutes</li>
+                    <li>⚠️ <strong>Warning:</strong> Timer turns red in last 5 minutes</li>
+                </ul>
+            </div>
+
+            <div class="instructions-section">
+                <h3>🏆 Success Criteria</h3>
+                <ul>
+                    <li>🎯 <strong>Minimum Score:</strong> 10/15 (67%)</li>
+                    <li>✅ <strong>Each Question:</strong> 1 point</li>
+                    <li>❌ <strong>No Penalties:</strong> For wrong answers</li>
+                    <li>💡 <strong>Hint System:</strong> 1 hint per round (5 total)</li>
+                </ul>
+            </div>
+
+            <div class="instructions-section">
+                <h3>🎮 How to Play</h3>
+                <ol>
+                    <li>📖 Read each ethics/governance scenario carefully</li>
+                    <li>🤔 Analyze the situation using frameworks learned</li>
+                    <li>✋ Select your answer from multiple choice options</li>
+                    <li>✅ Click "Submit Answer" to confirm your choice</li>
+                    <li>📚 Review detailed feedback and explanation</li>
+                    <li>➡️ Proceed to next challenge with "Next Question"</li>
+                </ol>
+            </div>
+
+            <div class="instructions-section">
+                <h3>⚠️ Crisis Resolution Levels</h3>
+                <div class="crisis-levels">
+                    <div class="level-item level-hero">
+                        <strong>15/15:</strong> 🏆 Ethics Champion - Company Saved!
+                    </div>
+                    <div class="level-item level-expert">
+                        <strong>12-14/15:</strong> ⚖️ Governance Expert - Crisis Averted
+                    </div>
+                    <div class="level-item level-officer">
+                        <strong>10-11/15:</strong> 📊 Compliance Officer - Company Survives
+                    </div>
+                    <div class="level-item level-fail">
+                        <strong>&lt;10/15:</strong> 💔 Junior Analyst - Company Bankruptcy
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center;">
+                <button class="btn-primary" onclick="closeInstructions()">Got It! Let's Start 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Certificate Canvas (Hidden) -->
+    <canvas id="certificateCanvas" style="display: none;"></canvas>
+
+    <footer>
+        <p>Designed by <strong>Vishweshwar Mensumane</strong> - 
+        <a href="https://moneyvichara.blogspot.com" target="_blank">moneyvichara.blogspot.com</a></p>
+    </footer>
+
+    <script>
+        // Questions Database
+        const questionsData = [
+            // ROUND 1: ETHICS FOUNDATION
+            {
+                round: 1,
+                roundName: "Ethics Foundation",
+                roundQuestion: 1,
+                tag: "ETHICAL FRAMEWORK",
+                question: "EthicsCorp's CEO discovered that a senior manager authorized off-label promotion of a drug not yet approved for that use, potentially generating ₹50 crore in additional revenue. The practice is not explicitly illegal but violates industry ethical guidelines. The CEO must decide whether to continue, stop, or report it. Which ethical decision-making factor should the CEO prioritize?",
+                options: [
+                    "A) Individual factor: The CEO's personal moral values and integrity",
+                    "B) Organizational factor: Company's code of ethics and compliance culture",
+                    "C) Market factor: Competitive practices and revenue implications",
+                    "D) Legal factor: Since it's not illegal, prioritize shareholder returns"
+                ],
+                correct: 1,
+                hint: "The question asks about decision-making factors. Consider what creates sustainable ethical behavior in organizations beyond individual conscience.",
+                explanation: "According to ethical decision-making frameworks, organizational factors like the company's code of ethics, compliance culture, and institutional norms are critical. While individual values matter, sustainable ethical behavior requires strong organizational systems, policies, and culture that guide all employees. The CEO should align the decision with EthicsCorp's ethical standards and industry guidelines, not just personal beliefs or profit motives."
+            },
+            {
+                round: 1,
+                roundName: "Ethics Foundation",
+                roundQuestion: 2,
+                tag: "INDIAN CONTEXT",
+                question: "EthicsCorp operates manufacturing facilities in rural Maharashtra. Local community leaders expect 'customary payments' for smooth operations, citing it as traditional business practice. However, the company's global compliance policy prohibits such payments. This scenario reflects which key challenge in the Indian business ethics context?",
+                options: [
+                    "A) Conflict between global ethical standards and local cultural practices",
+                    "B) Inadequate government regulation in rural areas",
+                    "C) Poor corporate social responsibility implementation",
+                    "D) Lack of stakeholder engagement mechanisms"
+                ],
+                correct: 0,
+                hint: "Think about the tension that arises when multinational companies operate in diverse cultural contexts where business norms differ.",
+                explanation: "This scenario exemplifies a key challenge in Indian business ethics: the conflict between global ethical standards and local cultural practices. What may be seen as 'customary' locally might constitute bribery or corruption under international standards. Indian companies, especially those with global operations, must navigate these complexities while maintaining ethical consistency. The solution lies in respecting culture while upholding universal ethical principles."
+            },
+            {
+                round: 1,
+                roundName: "Ethics Foundation",
+                roundQuestion: 3,
+                tag: "NATURE OF ETHICS",
+                question: "During a board meeting, directors debate whether ethics is merely 'good for business' (instrumental value) or has inherent importance regardless of business outcomes (intrinsic value). One director argues, 'We should be ethical only when it helps profitability.' What does this statement misunderstand about the nature of business ethics?",
+                options: [
+                    "A) Ethics is a compliance requirement, not a business choice",
+                    "B) Ethical behavior has both instrumental value (business benefits) and intrinsic value (right in itself)",
+                    "C) Ethics is only relevant for customer-facing operations",
+                    "D) Profitability should always override ethical considerations"
+                ],
+                correct: 1,
+                hint: "Consider why companies should be ethical even when it might not immediately benefit them financially. Think about stakeholder trust and long-term sustainability.",
+                explanation: "Business ethics has dual significance: instrumental value (it benefits business through reputation, stakeholder trust, risk reduction) AND intrinsic value (it's the right thing to do regardless of outcomes). Reducing ethics to purely instrumental value creates a dangerous precedent where ethical behavior is abandoned when inconvenient. True ethical organizations recognize that treating people with dignity, honesty, and fairness has inherent worth beyond profit calculations."
+            },
+
+            // ROUND 2: ETHICAL DILEMMAS
+            {
+                round: 2,
+                roundName: "Ethical Dilemmas",
+                roundQuestion: 1,
+                tag: "MORAL PHILOSOPHY",
+                question: "EthicsCorp's R&D team can fast-track a life-saving drug to market, but it requires using data from clinical trials that had some consent violations with 50 participants (trial completed 5 years ago, cannot be redone). Using the data saves 10,000+ lives annually. Not using it delays the drug by 3 years. A deontological ethics approach would likely recommend:",
+                options: [
+                    "A) Use the data because the consequences (saving 10,000+ lives) outweigh the harm to 50 people",
+                    "B) Do not use the data because the consent violations were wrong regardless of beneficial outcomes",
+                    "C) Use the data but compensate the 50 participants to rectify the wrong",
+                    "D) Conduct a stakeholder vote to determine the most acceptable course of action"
+                ],
+                correct: 1,
+                hint: "Deontology focuses on duties, rules, and moral principles rather than outcomes. What matters is whether the action itself is right or wrong.",
+                explanation: "Deontological ethics (associated with Kant) focuses on duty and moral rules rather than consequences. From this perspective, using data obtained through consent violations is inherently wrong, regardless of the beneficial outcomes. The means matter as much as the ends. This contrasts with teleological approaches (like utilitarianism) that would weigh the 10,000 lives saved against harm to 50. Deontology would argue that respecting human dignity and consent is a moral duty that cannot be violated even for greater good."
+            },
+            {
+                round: 2,
+                roundName: "Ethical Dilemmas",
+                roundQuestion: 2,
+                tag: "WHISTLEBLOWING",
+                question: "Priya, a senior quality assurance manager at EthicsCorp, discovers that batches of a generic drug have been released despite failing stability tests. Her manager pressures her to remain silent, saying 'We've done this before without issues.' Priya is considering whistleblowing. What is the PRIMARY challenge she faces according to whistleblowing literature?",
+                options: [
+                    "A) Legal protection: India lacks adequate whistleblower protection laws",
+                    "B) Retaliation risk: Fear of career damage, isolation, and organizational backlash",
+                    "C) Evidence gathering: Difficulty in obtaining documented proof of wrongdoing",
+                    "D) Public interest test: Determining if the issue truly warrants external disclosure"
+                ],
+                correct: 1,
+                hint: "Think about what most prevents employees from reporting wrongdoing, even when they have evidence and legal protection exists.",
+                explanation: "Research consistently shows that retaliation risk is the PRIMARY challenge whistleblowers face. Despite legal protections (India has the Whistle Blowers Protection Act, 2014), potential whistleblowers fear career damage, social isolation, blacklisting, and organizational backlash. Studies show that many whistleblowers face severe professional and personal consequences. While evidence gathering and legal protections are concerns, the fear of retaliation is what most often silences employees who witness wrongdoing."
+            },
+            {
+                round: 2,
+                roundName: "Ethical Dilemmas",
+                roundQuestion: 3,
+                tag: "LEADERSHIP ETHICS",
+                question: "EthicsCorp's new CEO wants to rebuild ethical culture. Research shows that leadership influence on organizational ethics is most effective when leaders:",
+                options: [
+                    "A) Establish strict rules and severely punish ethical violations to create deterrence",
+                    "B) Personally model ethical behavior and visibly reward ethical conduct (ethical role modeling)",
+                    "C) Delegate ethics management to the compliance department and HR",
+                    "D) Primarily focus on legal compliance rather than broader ethical values"
+                ],
+                correct: 1,
+                hint: "Consider the difference between compliance-based approaches and culture-based approaches. What actually changes employee behavior?",
+                explanation: "Research on ethical leadership consistently shows that personal role modeling and visible reinforcement of ethical behavior is most effective in shaping organizational ethics. When leaders 'walk the talk'—demonstrating ethical behavior themselves and recognizing it in others—it creates a culture where ethics becomes embedded in daily decisions. This is more powerful than rules alone (which create compliance mindset) or delegation (which signals ethics isn't a priority). Ethical role modeling creates authenticity and trust that drives genuine ethical behavior."
+            },
+
+            // ROUND 3: GOVERNANCE FRAMEWORK
+            {
+                round: 3,
+                roundName: "Governance Framework",
+                roundQuestion: 1,
+                tag: "COMPANIES ACT 2013",
+                question: "EthicsCorp India (listed company with ₹1,200 crore paid-up capital) is reconstituting its Board of Directors. Under the Companies Act, 2013 and SEBI (LODR) Regulations, what is the MINIMUM number of independent directors required on EthicsCorp's board?",
+                options: [
+                    "A) At least one-third of the total board strength",
+                    "B) At least half (50%) of the total board strength",
+                    "C) At least two independent directors, regardless of board size",
+                    "D) At least 25% of the total board strength"
+                ],
+                correct: 1,
+                hint: "Listed companies have stricter requirements than unlisted companies. Check the threshold for listed companies under SEBI regulations.",
+                explanation: "For listed public companies, SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015 mandate that at least HALF (50%) of the board should comprise independent directors when the chairperson is an executive director. If the chairperson is non-executive, at least one-third should be independent. Given EthicsCorp's governance crisis, having the maximum number of independent directors is crucial for restoring stakeholder confidence. This requirement ensures independent oversight of management."
+            },
+            {
+                round: 3,
+                roundName: "Governance Framework",
+                roundQuestion: 2,
+                tag: "STAKEHOLDER ROLES",
+                question: "Institutional investors holding 35% of EthicsCorp's shares demand greater transparency and accountability. In the corporate governance framework, what is the PRIMARY role and power of shareholders in ensuring good governance?",
+                options: [
+                    "A) Day-to-day operational decision-making and management oversight",
+                    "B) Voting on key matters (director appointments, major transactions) and holding management accountable",
+                    "C) Setting executive compensation and determining business strategy",
+                    "D) Direct supervision of internal audit and compliance functions"
+                ],
+                correct: 1,
+                hint: "Think about the separation of ownership and management. Shareholders own the company but don't manage it—what powers do they have?",
+                explanation: "In corporate governance, shareholders' primary role is to vote on key matters such as director appointments/removal, major transactions, auditor selection, and holding management accountable through AGMs and EGMs. They exercise oversight through voting rights, not direct management. While they can influence compensation policies, they don't set individual salaries. Day-to-day management is the board and executives' responsibility. Shareholders' power lies in their ability to replace directors if dissatisfied with governance."
+            },
+            {
+                round: 3,
+                roundName: "Governance Framework",
+                roundQuestion: 3,
+                tag: "CSR & GOVERNANCE",
+                question: "EthicsCorp allocated ₹15 crore for CSR activities (as required under Section 135 of Companies Act, 2013), but an investigation reveals that ₹8 crore was diverted to a related party NGO with minimal actual social impact. What does this scenario illustrate about the relationship between CSR and corporate governance?",
+                options: [
+                    "A) CSR is separate from governance and should be managed independently by the CSR committee",
+                    "B) CSR compliance is merely a legal formality with no real governance implications",
+                    "C) Strong governance mechanisms are essential to ensure CSR funds achieve genuine social impact and aren't misused",
+                    "D) CSR spending targets matter more than the actual utilization or governance of funds"
+                ],
+                correct: 2,
+                hint: "Consider what this misuse reveals about oversight, transparency, and accountability—all core governance principles.",
+                explanation: "This scenario perfectly illustrates that CSR and corporate governance are deeply interconnected. Strong governance mechanisms—board oversight, audit committees, transparency, related party transaction controls—are essential to ensure CSR funds create genuine social impact rather than becoming vehicles for fund diversion or window-dressing. CSR implementation reflects governance quality: companies with weak governance often have poor CSR execution. The Companies Act's CSR provisions require not just spending, but accountability for impact, which requires robust governance."
+            },
+
+            // ROUND 4: GOVERNANCE CHALLENGES
+            {
+                round: 4,
+                roundName: "Governance Challenges",
+                roundQuestion: 1,
+                tag: "BOARD INDEPENDENCE",
+                question: "EthicsCorp has 6 'independent' directors, but an investigation reveals: 3 have business relationships with the company's subsidiaries, 2 are relatives of major shareholders, and 1 was a senior executive until 2 years ago. This scenario highlights which critical governance challenge?",
+                options: [
+                    "A) Insufficient number of board committees to handle governance functions",
+                    "B) Lack of diversity in board composition and skills",
+                    "C) Independent directors in name only—compromised independence due to relationships and conflicts",
+                    "D) Excessive board size leading to coordination problems"
+                ],
+                correct: 2,
+                hint: "The key word is 'independent.' What does true independence mean beyond meeting technical requirements?",
+                explanation: "This scenario exemplifies a major governance challenge in India and globally: directors who are 'independent' on paper but lack genuine independence due to business relationships, family ties, or previous employment. True independence requires not just meeting regulatory criteria but actual freedom from conflicts of interest. Companies Act 2013 defines stringent independence criteria precisely to prevent such situations. The presence of genuinely independent directors who can challenge management and protect minority shareholders is crucial for effective governance."
+            },
+            {
+                round: 4,
+                roundName: "Governance Challenges",
+                roundQuestion: 2,
+                tag: "TRANSPARENCY",
+                question: "EthicsCorp's annual report provides minimal disclosure about related party transactions, showing only aggregate figures without details about transaction nature or parties involved. SEBI's disclosure norms require:",
+                options: [
+                    "A) Only material related party transactions need disclosure; small transactions can be aggregated",
+                    "B) Detailed disclosure of all related party transactions with names, nature, and amounts to ensure transparency",
+                    "C) Related party transactions disclosure is voluntary as long as they're approved by the audit committee",
+                    "D) Disclosure only required for transactions exceeding 10% of company's annual turnover"
+                ],
+                correct: 1,
+                hint: "Transparency is a core governance principle. What level of disclosure helps shareholders assess potential conflicts of interest?",
+                explanation: "SEBI (LODR) Regulations mandate detailed disclosure of all material related party transactions, including party names, nature of relationship, transaction value, and terms. This transparency enables shareholders to assess potential conflicts of interest and whether such transactions are in the company's best interest. Related party transactions are high-risk areas for abuse—where promoters/management can extract value from the company. Comprehensive disclosure is non-negotiable for good governance, not optional or aggregate-only."
+            },
+            {
+                round: 4,
+                roundName: "Governance Challenges",
+                roundQuestion: 3,
+                tag: "GOVERNANCE FAILURES",
+                question: "After studying governance failures at companies like Satyam (2009), Kingfisher Airlines, and YES Bank, what is the MOST COMMON underlying cause that led to these collapses?",
+                options: [
+                    "A) External market conditions and economic downturns beyond management control",
+                    "B) Weak board oversight, lack of independent directors' effectiveness, and promoter dominance",
+                    "C) Inadequate regulatory framework and enforcement by SEBI",
+                    "D) Complex business models that boards couldn't understand"
+                ],
+                correct: 1,
+                hint: "Look for the common thread in Indian governance failures. What was missing inside these companies that could have prevented collapse?",
+                explanation: "Analysis of major Indian corporate governance failures reveals a consistent pattern: weak board oversight, ineffective independent directors who failed to question management, and excessive promoter/founder dominance where boards acted as rubber stamps. In Satyam, the board failed to detect massive fraud. In Kingfisher and YES Bank, boards didn't challenge aggressive strategies and risk-taking. The lesson: effective governance requires genuinely independent directors willing to challenge management, robust board processes, and a culture where dissent is welcome, not suppressed."
+            },
+
+            // ROUND 5: GLOBAL ETHICS
+            {
+                round: 5,
+                roundName: "Global Ethics",
+                roundQuestion: 1,
+                tag: "CROSS-BORDER ETHICS",
+                question: "EthicsCorp's subsidiary in an African country faces a dilemma: local regulations allow employment of 16-year-olds in manufacturing, which is common practice there, but India's laws and ILO conventions prohibit child labor (under 18 in hazardous work). EthicsCorp should:",
+                options: [
+                    "A) Follow local laws since 'when in Rome, do as Romans do' principle applies to international business",
+                    "B) Apply the more stringent standard (prohibit employment under 18) to maintain ethical consistency globally",
+                    "C) Create separate ethical standards for each geography based on local norms",
+                    "D) Follow local law but ensure longer working hours are prohibited"
+                ],
+                correct: 1,
+                hint: "When faced with different standards across countries, what principle helps maintain ethical consistency? Consider the concept of ethical universalism vs. relativism.",
+                explanation: "In cross-border ethics, when faced with conflicting standards, best practice is to apply the MORE STRINGENT standard to maintain global ethical consistency. This reflects ethical universalism—certain values like human rights, labor standards, and dignity transcend cultural boundaries. While cultural sensitivity matters, core ethical principles shouldn't be compromised. ILO conventions and responsible business conduct frameworks (like OECD Guidelines) advocate this approach. 'When in Rome' cultural relativism can justify unethical practices; global companies need universal ethical baselines."
+            },
+            {
+                round: 5,
+                roundName: "Global Ethics",
+                roundQuestion: 2,
+                tag: "COMPLIANCE FRAMEWORKS",
+                question: "EthicsCorp operates in 45 countries and must comply with multiple regulatory frameworks: Indian Companies Act, US FDA regulations, EU GDPR, UK Bribery Act, and various local laws. What is the PRIMARY challenge this creates?",
+                options: [
+                    "A) Financial cost: Multiple compliance requirements increase operational expenses significantly",
+                    "B) Complexity and conflict: Different jurisdictions may have conflicting requirements requiring harmonization strategies",
+                    "C) Resource allocation: Need for specialized legal teams in each geography",
+                    "D) Language barriers: Translating compliance materials across multiple languages"
+                ],
+                correct: 1,
+                hint: "Think beyond just cost or staffing. What happens when different countries' laws require different or contradictory actions?",
+                explanation: "The primary challenge of multi-jurisdictional compliance is the complexity and potential conflicts between different regulatory frameworks. For example, data localization requirements in India might conflict with EU GDPR's data transfer provisions; anti-bribery laws may have different thresholds; product approval standards vary. Companies must develop harmonization strategies, often adopting the highest common denominator approach. While costs and resources matter, the fundamental challenge is navigating potentially contradictory legal requirements while maintaining operational efficiency and ethical consistency."
+            },
+            {
+                round: 5,
+                roundName: "Global Ethics",
+                roundQuestion: 3,
+                tag: "OECD PRINCIPLES",
+                question: "The OECD Principles of Corporate Governance emphasize certain key elements that should guide global companies like EthicsCorp. Which of the following is a CORE principle in the OECD framework?",
+                options: [
+                    "A) Maximizing short-term shareholder value above all other considerations",
+                    "B) Ensuring board accountability, protecting shareholder rights, and stakeholder role recognition",
+                    "C) Prioritizing home country regulations over host country laws in all matters",
+                    "D) Limiting transparency to protect competitive business information"
+                ],
+                correct: 1,
+                hint: "OECD principles aim to create governance frameworks that balance multiple interests. Think about accountability, rights, and stakeholders.",
+                explanation: "The OECD Principles of Corporate Governance (updated 2023) establish core principles including: ensuring basis for effective governance framework, protecting shareholder rights and equitable treatment, recognizing stakeholder roles, disclosure and transparency, and board responsibilities and accountability. These principles recognize that good governance balances interests of shareholders and stakeholders, requires transparency, and makes boards accountable. They've influenced corporate governance reforms globally, including in India. The principles advocate for long-term value creation, not short-term maximization, and emphasize transparency, not secrecy."
+            }
+        ];
+
+        // Round names for display
+        const roundNames = [
+            "Ethics Foundation",
+            "Ethical Dilemmas", 
+            "Governance Framework",
+            "Governance Challenges",
+            "Global Ethics"
+        ];
+
+        // Game State Management
+        let gameState = {
+            playerName: '',
+            currentQuestionIndex: 0,
+            score: 0,
+            timeRemaining: 1800, // 30 minutes in seconds
+            timerInterval: null,
+            startTime: null,
+            selectedAnswer: null,
+            hintsUsedPerRound: [0, 0, 0, 0, 0],
+            roundScores: [0, 0, 0, 0, 0],
+            answeredCorrectly: []
+        };
+
+        // Initialize game
+        function startGame() {
+            const nameInput = document.getElementById('playerName').value.trim();
+            
+            if (!nameInput) {
+                alert('⚠️ Please enter your name to begin!');
+                return;
+            }
+            
+            gameState.playerName = nameInput;
+            gameState.startTime = new Date();
+            
+            document.getElementById('playerNameDisplay').textContent = gameState.playerName;
+            showScreen('gameScreen');
+            
+            loadQuestion();
+            startTimer();
+        }
+
+        // Screen management
+        function showScreen(screenId) {
+            const screens = document.querySelectorAll('.screen');
+            screens.forEach(screen => screen.classList.remove('active'));
+            document.getElementById(screenId).classList.add('active');
+        }
+
+        // Timer functions
+        function startTimer() {
+            gameState.timerInterval = setInterval(() => {
+                gameState.timeRemaining--;
+                updateTimerDisplay();
+                
+                if (gameState.timeRemaining <= 0) {
+                    endGame();
+                }
+            }, 1000);
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(gameState.timeRemaining / 60);
+            const seconds = gameState.timeRemaining % 60;
+            const timeString = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            const timerElement = document.getElementById('timer');
+            timerElement.textContent = `⏰ Time Left: ${timeString}`;
+            
+            if (gameState.timeRemaining <= 300) {
+                timerElement.classList.add('warning');
+            }
+        }
+
+        function stopTimer() {
+            if (gameState.timerInterval) {
+                clearInterval(gameState.timerInterval);
+            }
+        }
+
+        // Load and display question
+        function loadQuestion() {
+            const question = questionsData[gameState.currentQuestionIndex];
+            const currentRound = question.round;
+            const roundQuestion = question.roundQuestion;
+            
+            document.getElementById('currentRound').textContent = currentRound;
+            document.getElementById('roundNameDisplay').textContent = question.roundName;
+            document.getElementById('currentQuestion').textContent = gameState.currentQuestionIndex + 1;
+            document.getElementById('roundQuestion').textContent = roundQuestion;
+            document.getElementById('currentScore').textContent = gameState.score;
+            
+            const progress = ((gameState.currentQuestionIndex) / questionsData.length) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            
+            document.getElementById('questionTag').textContent = question.tag;
+            document.getElementById('questionText').textContent = question.question;
+            
+            const optionsContainer = document.getElementById('optionsContainer');
+            optionsContainer.innerHTML = '';
+            
+            question.options.forEach((option, index) => {
+                const optionDiv = document.createElement('div');
+                optionDiv.className = 'option';
+                optionDiv.innerHTML = `
+                    <input type="radio" name="answer" id="option${index}" value="${index}">
+                    <label for="option${index}">${option}</label>
+                `;
+                optionDiv.onclick = () => selectOption(index);
+                optionsContainer.appendChild(optionDiv);
+            });
+            
+            const hintsUsedThisRound = gameState.hintsUsedPerRound[currentRound - 1];
+            const hintBtn = document.getElementById('hintBtn');
+            const hintCount = document.getElementById('hintCount');
+            
+            if (hintsUsedThisRound >= 1) {
+                hintBtn.disabled = true;
+                hintBtn.textContent = '💡 No hints left this round';
+            } else {
+                hintBtn.disabled = false;
+                hintCount.textContent = (1 - hintsUsedThisRound);
+            }
+            
+            document.getElementById('hintBox').style.display = 'none';
+            document.getElementById('feedbackBox').style.display = 'none';
+            
+            document.getElementById('submitBtn').style.display = 'block';
+            document.getElementById('nextBtn').style.display = 'none';
+            document.getElementById('submitBtn').disabled = false;
+            
+            gameState.selectedAnswer = null;
+        }
+
+        // Option selection
+        function selectOption(index) {
+            gameState.selectedAnswer = index;
+            
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            
+            const options = document.querySelectorAll('.option');
+            options[index].classList.add('selected');
+            
+            document.getElementById(`option${index}`).checked = true;
+        }
+
+        // Hint system
+        function showHint() {
+            const question = questionsData[gameState.currentQuestionIndex];
+            const currentRound = question.round;
+            
+            if (gameState.hintsUsedPerRound[currentRound - 1] >= 1) {
+                return;
+            }
+            
+            const hintBox = document.getElementById('hintBox');
+            const hintText = document.getElementById('hintText');
+            
+            hintText.textContent = question.hint;
+            hintBox.style.display = 'block';
+            
+            gameState.hintsUsedPerRound[currentRound - 1]++;
+            
+            const hintBtn = document.getElementById('hintBtn');
+            hintBtn.disabled = true;
+            hintBtn.textContent = '💡 No hints left this round';
+        }
+
+        // Submit answer
+        function submitAnswer() {
+            if (gameState.selectedAnswer === null) {
+                alert('⚠️ Please select an answer before submitting!');
+                return;
+            }
+            
+            const question = questionsData[gameState.currentQuestionIndex];
+            const isCorrect = gameState.selectedAnswer === question.correct;
+            
+            if (isCorrect) {
+                gameState.score++;
+                gameState.roundScores[question.round - 1]++;
+                gameState.answeredCorrectly.push(true);
+            } else {
+                gameState.answeredCorrectly.push(false);
+            }
+            
+            document.getElementById('currentScore').textContent = gameState.score;
+            
+            showFeedback(isCorrect, question);
+            
+            document.getElementById('submitBtn').style.display = 'none';
+            document.getElementById('nextBtn').style.display = 'block';
+            
+            document.querySelectorAll('.option').forEach(opt => {
+                opt.style.pointerEvents = 'none';
+            });
+            
+            const options = document.querySelectorAll('.option');
+            options[question.correct].classList.add('correct');
+            
+            if (!isCorrect) {
+                options[gameState.selectedAnswer].classList.add('incorrect');
+            }
+        }
+
+        // Show feedback
+        function showFeedback(isCorrect, question) {
+            const feedbackBox = document.getElementById('feedbackBox');
+            const feedbackIcon = document.getElementById('feedbackIcon');
+            const feedbackText = document.getElementById('feedbackText');
+            const explanationText = document.getElementById('explanationText');
+            
+            if (isCorrect) {
+                feedbackIcon.textContent = '✅';
+                feedbackText.textContent = 'Correct! Excellent decision-making!';
+                feedbackBox.className = 'feedback feedback-correct';
+            } else {
+                feedbackIcon.textContent = '❌';
+                feedbackText.textContent = 'Incorrect. Review the explanation below.';
+                feedbackBox.className = 'feedback feedback-incorrect';
+            }
+            
+            explanationText.textContent = question.explanation;
+            feedbackBox.style.display = 'block';
+            
+            feedbackBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+
+        // Next question
+        function nextQuestion() {
+            gameState.currentQuestionIndex++;
+            
+            if (gameState.currentQuestionIndex >= questionsData.length) {
+                endGame();
+            } else {
+                document.querySelectorAll('.option').forEach(opt => {
+                    opt.style.pointerEvents = 'auto';
+                });
+                
+                loadQuestion();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // End game
+        function endGame() {
+            stopTimer();
+            
+            const endTime = new Date();
+            const timeTaken = Math.floor((endTime - gameState.startTime) / 1000);
+            const minutes = Math.floor(timeTaken / 60);
+            const seconds = timeTaken % 60;
+            
+            showScreen('resultsScreen');
+            displayResults(minutes, seconds);
+        }
+
+        // Display results
+        function displayResults(minutes, seconds) {
+            const percentage = Math.round((gameState.score / questionsData.length) * 100);
+            
+            document.getElementById('finalScore').textContent = gameState.score;
+            document.getElementById('percentageScore').textContent = percentage + '%';
+            document.getElementById('timeTaken').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            
+            let resultIcon, resultTitle, resultMessage, resultClass;
+            
+            if (gameState.score === 15) {
+                resultIcon = '🏆';
+                resultTitle = 'Ethics Champion - Company Saved!';
+                resultMessage = 'Outstanding! You demonstrated exceptional mastery of business ethics and corporate governance. EthicsCorp India is safe under your leadership. The ₹1,000 crore investment is secured, and stakeholder confidence is fully restored!';
+                resultClass = 'level-hero';
+            } else if (gameState.score >= 12) {
+                resultIcon = '⚖️';
+                resultTitle = 'Governance Expert - Crisis Averted';
+                resultMessage = 'Excellent work! Your strong understanding of ethics and governance has successfully navigated EthicsCorp through this crisis. The company will survive and rebuild its reputation.';
+                resultClass = 'level-expert';
+            } else if (gameState.score >= 10) {
+                resultIcon = '📊';
+                resultTitle = 'Compliance Officer - Company Survives';
+                resultMessage = 'Good effort! You demonstrated adequate knowledge to keep EthicsCorp operational. However, there are gaps in your understanding that need strengthening for robust governance.';
+                resultClass = 'level-officer';
+            } else {
+                resultIcon = '💔';
+                resultTitle = 'Junior Analyst - Company Bankruptcy';
+                resultMessage = 'Unfortunately, critical knowledge gaps in ethics and governance have led to EthicsCorp\'s collapse. The ₹1,000 crore investment is lost. Review the material and try again to save the company!';
+                resultClass = 'level-fail';
+            }
+            
+            document.getElementById('resultsIcon').textContent = resultIcon;
+            document.getElementById('resultsTitle').textContent = resultTitle;
+            document.getElementById('resultsMessage').textContent = resultMessage;
+            document.querySelector('.results-card').className = `results-card ${resultClass}`;
+            
+            displayRoundBreakdown();
+        }
+
+        // Display round breakdown
+        function displayRoundBreakdown() {
+            const breakdownContainer = document.getElementById('roundBreakdown');
+            breakdownContainer.innerHTML = '';
+            
+            roundNames.forEach((roundName, index) => {
+                const roundScore = gameState.roundScores[index];
+                const roundDiv = document.createElement('div');
+                roundDiv.className = 'round-score';
+                
+                const percentage = Math.round((roundScore / 3) * 100);
+                let emoji = '🔴';
+                if (percentage === 100) emoji = '🟢';
+                else if (percentage >= 67) emoji = '🟡';
+                
+                roundDiv.innerHTML = `
+                    <span class="round-name">${emoji} Round ${index + 1}: ${roundName}</span>
+                    <span class="round-result">${roundScore}/3 (${percentage}%)</span>
+                `;
+                
+                breakdownContainer.appendChild(roundDiv);
+            });
+        }
+
+        // Certificate generation
+        function generateCertificate() {
+            const canvas = document.getElementById('certificateCanvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = 1200;
+            canvas.height = 800;
+            
+            ctx.fillStyle = '#ffffff';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            
+            ctx.strokeStyle = '#2c3e50';
+            ctx.lineWidth = 20;
+            ctx.strokeRect(30, 30, canvas.width - 60, canvas.height - 60);
+            
+            ctx.strokeStyle = '#3498db';
+            ctx.lineWidth = 5;
+            ctx.strokeRect(50, 50, canvas.width - 100, canvas.height - 100);
+            
+            ctx.fillStyle = '#2c3e50';
+            ctx.font = 'bold 48px Arial';
+            ctx.textAlign = 'center';
+            ctx.fillText('CERTIFICATE OF COMPLETION', canvas.width / 2, 150);
+            
+            ctx.font = '32px Arial';
+            ctx.fillStyle = '#34495e';
+            ctx.fillText('Business Ethics & Corporate Governance', canvas.width / 2, 200);
+            ctx.fillText('Crisis Challenge', canvas.width / 2, 240);
+            
+            ctx.font = 'bold 36px Arial';
+            ctx.fillStyle = '#e74c3c';
+            ctx.fillText('EthicsCorp India - Governance Meltdown', canvas.width / 2, 290);
+            
+            ctx.font = '24px Arial';
+            ctx.fillStyle = '#2c3e50';
+            ctx.fillText('This certifies that', canvas.width / 2, 350);
+            
+            ctx.font = 'bold 42px Arial';
+            ctx.fillStyle = '#2c3e50';
+            ctx.fillText(gameState.playerName, canvas.width / 2, 410);
+            
+            ctx.font = '24px Arial';
+            ctx.fillStyle = '#34495e';
+            ctx.fillText('has successfully completed the challenge and demonstrated', canvas.width / 2, 470);
+            ctx.fillText('competency in Business Ethics and Corporate Governance', canvas.width / 2, 505);
+            
+            ctx.font = 'bold 36px Arial';
+            ctx.fillStyle = '#27ae60';
+            const percentage = Math.round((gameState.score / questionsData.length) * 100);
+            ctx.fillText(`Score: ${gameState.score}/15 (${percentage}%)`, canvas.width / 2, 570);
+            
+            const date = new Date().toLocaleDateString('en-IN', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+            ctx.font = '20px Arial';
+            ctx.fillStyle = '#7f8c8d';
+            ctx.fillText(`Date: ${date}`, canvas.width / 2, 630);
+            
+            ctx.font = 'italic 18px Arial';
+            ctx.fillStyle = '#95a5a6';
+            ctx.fillText('Designed by Vishweshwar Mensumane', canvas.width / 2, 710);
+            ctx.fillText('moneyvichara.blogspot.com', canvas.width / 2, 740);
+            
+            const link = document.createElement('a');
+            link.download = `EthicsCorp_Certificate_${gameState.playerName.replace(/\s+/g, '_')}.png`;
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Restart game
+        function restartGame() {
+            gameState = {
+                playerName: '',
+                currentQuestionIndex: 0,
+                score: 0,
+                timeRemaining: 1800,
+                timerInterval: null,
+                startTime: null,
+                selectedAnswer: null,
+                hintsUsedPerRound: [0, 0, 0, 0, 0],
+                roundScores: [0, 0, 0, 0, 0],
+                answeredCorrectly: []
+            };
+            
+            document.getElementById('playerName').value = '';
+            
+            const timerElement = document.getElementById('timer');
+            timerElement.textContent = '⏰ Time Left: 30:00';
+            timerElement.classList.remove('warning');
+            
+            showScreen('welcomeScreen');
+        }
+
+        // Instructions modal
+        function showInstructions() {
+            document.getElementById('instructionsModal').style.display = 'block';
+        }
+
+        function closeInstructions() {
+            document.getElementById('instructionsModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('instructionsModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            showScreen('welcomeScreen');
+        });
+    </script>
+</body>
+</html>
